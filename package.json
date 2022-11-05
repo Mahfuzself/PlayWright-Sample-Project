@@ -1,0 +1,21 @@
+{
+  "name": "udemy-playwright",
+  "version": "1.0.0",
+  "description": "Automated software testing with Playwright",
+  "main": "index.js",
+  "scripts": {
+    "tests:chrome": "playwright test --config=playwright.config.ts --project=Chromium",
+    "tests:firefox": "playwright test --config=playwright.config.ts --project=Firefox",
+    "tests:webkit": "playwright test --config=playwright.config.ts --project=Webkit",
+    "tests:e2e": "playwright test --config=e2e.config.ts --project=Webkit",
+    "tests:amtp": "playwright test --config=amtp.config.ts --project=Chromium --debug"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+  "prettier": "^2.5.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.27.1"
+  }
+}
