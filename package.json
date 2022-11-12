@@ -8,7 +8,9 @@
     "tests:firefox": "playwright test --config=playwright.config.ts --project=Firefox",
     "tests:webkit": "playwright test --config=playwright.config.ts --project=Webkit",
     "tests:e2e": "playwright test --config=e2e.config.ts --project=Webkit",
-    "tests:amtp": "playwright test --config=amtp.config.ts --project=Chromium --debug"
+    "tests:amtp": "playwright test --config=amtp.config.ts --project=Chromium",
+    "tests:visual": "playwright test --config=visual.config.ts --project=Chromium"
+
   },
   "author": "",
   "license": "ISC",

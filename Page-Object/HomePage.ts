@@ -4,14 +4,16 @@ export class HomePage{
     readonly signinButton : Locator
     readonly searchBox : Locator
     readonly feedback : Locator
+    
   constructor (page : Page){
     this.page = page
     this.signinButton = page.locator('#signin_button')
     this.searchBox = page.locator('#searchTerm')
     this.feedback = page.locator('#feedback')
+   
   }
   async visit (){
-   await this.page.goto('http://zero.webappsecurity.com/')
+   await this.page.goto('http://zero.webappsecurity.com')
   // await this.feedback.click()
 }
      async  clickonSignin(){
@@ -24,4 +26,5 @@ export class HomePage{
       await this.searchBox.type(usersearch)
       await this.page.keyboard.press('Enter')
    }
+   
 }

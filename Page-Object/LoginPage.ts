@@ -7,6 +7,8 @@ export class LoginPage extends AbstaractPage{
   readonly passwordInput : Locator
   readonly submitButton : Locator
   readonly errorMessage : Locator
+  readonly loginForm : Locator
+    //readonly errorMessage : Locator
   //init selector using constractor
   constructor (page :Page){
     super(page)
@@ -15,9 +17,8 @@ export class LoginPage extends AbstaractPage{
     this.passwordInput = page.locator('#user_password')
     this.submitButton = page.locator('text=Sign in')
     this.errorMessage = page.locator('.alert-error')
-
-    
-    
+    this.loginForm = page.locator('#login_form')
+    //this.errorMessage = page.locator('.alert-error')
   }
   //define loginpage method
  async login(username : string,password : string){
@@ -28,6 +29,11 @@ export class LoginPage extends AbstaractPage{
   async AsserterrorMessage(){
     await expect(this.errorMessage).toContainText('Login and/or password are wrong')
   }
-  
+  async snapshotLoginform(){
+    await expect(this.loginForm.screenshot()).toMatchSnapshot('login-form.png')
+   }
 
+   async snapshotErrorMessage(){
+    await expect(this.errorMessage.screenshot()).toMatchSnapshot('login_error.png')
+   }
 }
